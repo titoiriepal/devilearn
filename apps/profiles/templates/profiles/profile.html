@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Profile
+{% endblock title %}
+
+
+{% block custom_styles %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+{% endblock custom_styles %}
+    
+
+
+{% block content %}
+    <div class="layout">
+
+        {% include 'includes/sidebar.html' %}
+
+        <!-- Main content -->
+        <div class="main-content">
+            <!-- Header -->
+            {% include 'includes/header.html' %}
+
+            <!-- Aquí va el contenido de la página -->
+            <main>
+                <div class="profile-container">
+                    <div class="profile-picture">
+                        <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Profile Picture">
+                        <label for="fileUpload">Load new image</label>
+                        <input type="file" id="fileUpload" style="display: none;">
+                    </div>
+
+                    <form class="profile-form">
+                        <h2>Edit Profile</h2>
+
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="usuario@correo.com">
+                        </div>
+
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" value="Name">
+                            </div>
+                            <div class="input-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" value="LastName">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="professionalTitle">Professional Title</label>
+                            <input type="text" id="professionalTitle">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="timezone">Time Zone</label>
+                            <select id="timezone">
+                                <option value="">Select your time zone</option>
+                                <option value="UTC-6">UTC-6 Ciudad de México</option>
+                                <option value="UTC-5">UTC-5 Bogotá</option>
+                                <option value="UTC-3">UTC-3 Buenos Aires</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Save Changes</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock content %}
+    
+{% block scripts %}
+    
+{% endblock scripts %}
+    
+    <script src="{% static 'js/script.js' %}"></script>
+
+</html>
