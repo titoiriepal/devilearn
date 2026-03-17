@@ -5,6 +5,7 @@ from .models import (
     Module,
     Enrollment,
     Progress,
+    Review,
 )
 
 
@@ -15,5 +16,6 @@ __all__ = [
     'Module',
     'Enrollment',
     'Progress',
+    'Review',
 ]
 # Create your models here.
