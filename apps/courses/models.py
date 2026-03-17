@@ -1,6 +1,19 @@
-from django.db import models
-from .models.category import Category
-from .models.course import Course, CourseCategory
-from .models.module import Module
+from .models import (
+    Category,
+    Course,
+    CourseCategory,
+    Module,
+    Enrollment,
+    Progress,
+)
 
+
+__all__ = [
+    'Category',
+    'Course',
+    'CourseCategory',
+    'Module',
+    'Enrollment',
+    'Progress',
+]
 # Create your models here.
