@@ -6,6 +6,7 @@ from .models import (
     Enrollment,
     Progress,
     Review,
+    Content,
 )
 
 
@@ -17,5 +18,6 @@ __all__ = [
     'Enrollment',
     'Progress',
     'Review',
+    'Content',
 ]
 # Create your models here.
