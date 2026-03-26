@@ -4,7 +4,7 @@ from .module import Module
 from .enrollment import Enrollment
 from .progress import Progress
 from .review import Review
-from .content import Content
+from .content import Content, Text, File, Image, Video
 
 
 __all__ = [
@@ -16,4 +16,8 @@ __all__ = [
     'Progress',
     'Review',
     'Content',
+    'Text',
+    'File',
+    'Image',
+    'Video',
 ]

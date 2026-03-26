@@ -7,6 +7,10 @@ from .models import (
     Progress,
     Review,
     Content,
+    Text,
+    File,
+    Image,
+    Video,
 )
 
 
@@ -19,5 +23,9 @@ __all__ = [
     'Progress',
     'Review',
     'Content',
+    'Text',
+    'File',
+    'Image',
+    'Video',
 ]
 # Create your models here.

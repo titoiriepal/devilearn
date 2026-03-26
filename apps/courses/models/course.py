@@ -18,6 +18,10 @@ class Course(models.Model):
         through='CourseCategory',
         related_name='courses',
     )
+    image = models.URLField(default='')
+    level = models.CharField(max_length=50)
+    rating = models.FloatField(default=0.0)
+    duration = models.FloatField(help_text='Duration in hours', default=0.0)
 
     class Meta:
         ordering = ['-created_at']

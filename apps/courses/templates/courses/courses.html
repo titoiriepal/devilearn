@@ -28,34 +28,48 @@
                 <!-- === COURSE CARDS === -->
 
                 <div class="carousel-wrapper">
+                    
                     <div class="course-grid">
-                        <div class="course-grid">
-                            
-                            <!-- Aquí se itera sobre los cursos pasados desde la vista -->
-                          
-                            {% for course in courses  %}
-                                <div class="course-card">
-                                    <a href="{% url 'course_detail' %}">
-                                        <img src="{% static course.course_image %}" alt="Course Image" class="course-img" />
-                                        <div class="course-info">
-                                            <div class="course-rating">
-                                                <span class="tag beginner">{{course.level}}</span>
-                                                <div class="course-meta">
-                                                    <span><i class="fa-solid fa-star"></i> {{course.rating}}</span>
-                                                </div>
+                        
+                        <!-- Aquí se itera sobre los cursos pasados desde la vista -->
+                        
+                        {% for course in courses_obj  %}
+                            <div class="course-card">
+                                <a href="{% url 'course_detail' slug=course.slug %}">
+                                    <img src="{{ course.image }}" alt="Course Image" class="course-img" />
+                                    <div class="course-info">
+                                        <div class="course-rating">
+                                            <span class="tag beginner">{{course.level}}</span>
+                                            <div class="course-meta">
+                                                <span><i class="fa-solid fa-star"></i> {{course.rating}}</span>
                                             </div>
-
-                                            <h3 class="course-title">{{course.description}}
-                                            </h3>
-                                            <div class="author"><img src="{{course.instructor_image}}"
-                                                    alt=""><span>{{course.instructor}}</span></div>
                                         </div>
 
-                                    </a>
-                                </div>
-                            {% endfor %}
-                                
-                        </div>
+                                        <h3 class="course-title">{{course.title}}
+                                        </h3>
+                                        <div class="author"><img src="{{course.owner.instructor_profile.photo}}"
+                                                alt=""><span>{{course.owner.get_full_name}}</span></div>
+                                    </div>
+
+                                </a>
+                            </div>
+                        {% endfor %}
+                            
+                    </div>
+                    <div class="paginator">
+                        
+                        {% if courses_obj.has_previous %}
+                            <a class="pag-button" href="?page=1&{{query_string}}"><<<</a>
+                            <a class="pag-button" href="?page={{courses_obj.previous_page_number}}&{{query_string}}"><</a>
+                        {% endif %}
+
+                        <span class="current-page">Page {{ courses_obj.number }} of {{ courses_obj.paginator.num_pages }}</span>
+
+                        {% if courses_obj.has_next %}
+                            <a class="pag-button" href="?page={{courses_obj.next_page_number}}&{{query_string}}">></a>
+                            <a class="pag-button" href="?page={{courses_obj.paginator.num_pages}}&{{query_string}}">>>></a>
+                        {% endif %}
+                            
                     </div>
                 </div>
 
