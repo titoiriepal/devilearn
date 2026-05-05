@@ -131,3 +131,6 @@ STATICFILES_DIRS = [
 DEFAUTL_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'profiles.User'
+
+LOGIN_REDIRECT_URL = 'course_list'
+LOGOUT_REDIRECT_URL = 'login'
