@@ -69,6 +69,12 @@ form select {
     font-size: 1rem;
 }
 
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
 form button {
     width: 100%;
 }
@@ -90,13 +96,27 @@ form button {
 
 .btn {
     padding: 10px;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 5px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #000;
 }
 
 .btn-primary {
-    background-color: #1b1c31;
+    background-color: #212347;
+    color: #c9c7c7;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #181936;
     color: #fff;
+    cursor: pointer;
 }
 
 .btn-danger {
